@@ -28,13 +28,40 @@ import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
  *
  * @return {Element} Element to render.
  */
-export default function Edit() {
-	const currentYear = new Date().getFullYear().toString();
-	return (
+export default function Edit( { attributes, setAttributes } ) {
+    const { showStartingYear, startingYear } = attributes;
+    const currentYear = new Date().getFullYear().toString();
+
+    return (
         <>
-           <InspectorControls>
+            <InspectorControls>
                 <PanelBody title={ __( 'Settings', 'copyright-date-block' ) }>
-                    Testing
+                    <ToggleControl
+                        checked={ !! showStartingYear }
+                        label={ __(
+                            'Show starting year',
+                            'copyright-date-block'
+                        ) }
+                        onChange={ () =>
+                            setAttributes( {
+                                showStartingYear: ! showStartingYear,
+                            } )
+                        }
+                    />
+                    { showStartingYear && (
+                        <TextControl
+                            __nextHasNoMarginBottom
+                            __next40pxDefaultSize
+                            label={ __(
+                                'Starting year',
+                                'copyright-date-block'
+                            ) }
+                            value={ startingYear || '' }
+                            onChange={ ( value ) =>
+                                setAttributes( { startingYear: value } )
+                            }
+                        />
+                    ) }
                 </PanelBody>
             </InspectorControls>
             <p { ...useBlockProps() }>© { currentYear }</p>
