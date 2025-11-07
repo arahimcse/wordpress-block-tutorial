@@ -12,6 +12,16 @@ return array(
 		'example' => array(
 			
 		),
+		'attributes' => array(
+			'showStartingYear' => array(
+				'type' => 'boolean',
+				'default' => false
+			),
+			'startingYear' => array(
+				'type' => 'string',
+				'default' => ''
+			)
+		),
 		'supports' => array(
 			'html' => false,
 			'color' => array(
@@ -21,7 +31,8 @@ return array(
 			'typography' => array(
 				'fontSize' => true,
 				'textAlign' => true
-			)
+			),
+			'layout' => true
 		),
 		'textdomain' => 'copyright-date-block',
 		'editorScript' => 'file:./index.js',

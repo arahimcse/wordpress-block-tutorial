@@ -7,6 +7,16 @@
   "category": "widgets",
   "description": "Display your site’s copyright date.",
   "example": {},
+  "attributes": {
+    "showStartingYear": {
+      "type": "boolean",
+      "default": false
+    },
+    "startingYear": {
+      "type": "string",
+      "default": ""
+    }
+  },
   "supports": {
     "html": false,
     "color": {
@@ -16,7 +26,8 @@
     "typography": {
       "fontSize": true,
       "textAlign": true
-    }
+    },
+    "layout": true
   },
   "textdomain": "copyright-date-block",
   "editorScript": "file:./index.js",

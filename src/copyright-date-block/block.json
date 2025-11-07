@@ -8,23 +8,26 @@
 	"description": "Display your site’s copyright date.",
 	"example": {},
 	"attributes": {
-		"showStartingYear":{
-			"type":"boolean"
+		"showStartingYear": {
+			"type": "boolean",
+			"default": false
 		},
-		"startingYear":{
-			"type":"string"
+		"startingYear": {
+			"type": "string",
+			"default": ""
 		}
 	},
 	"supports": {
 		"html": false,
-		"color":{
+		"color": {
 			"text": true,
 			"background": true
 		},
 		"typography": {
 			"fontSize": true,
 			"textAlign": true
-		}
+		},
+		"layout": true
 	},
 	"textdomain": "copyright-date-block",
 	"editorScript": "file:./index.js",
